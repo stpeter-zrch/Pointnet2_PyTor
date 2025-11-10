@@ -1,0 +1,6 @@
+# pointnet2/config/task_model/semseg-msg.yaml
+_target_: pointnet2.models.pointnet2_msg_sem.PointNet2SemSegMSG
+name: semseg-msg
+input_channels: 1      # 只用 PA 作为附加特征
+num_classes: 10        # 按你的实验类别数改
+use_xyz: true          # TOA, PW, CF 作为三维坐标

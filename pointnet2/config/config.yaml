@@ -1,0 +1,24 @@
+defaults:
+    - task: cls
+    - model: ssg
+    - task_model: ${defaults[0].task}-${defaults[1].model}
+    - _self_
+
+hydra:
+  run:
+    dir: outputs
+
+gpus:
+    - 0
+
+optimizer:
+  name: Adam
+  lr: 0.001
+  weight_decay: 1e-4
+
+task_model:
+  name: cls-ssg
+
+model: ???
+
+distrib_backend: auto
